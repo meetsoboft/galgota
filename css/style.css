@@ -601,6 +601,9 @@ ul.footer_ul2_sec.social_footer_ul li.d-block {
             order: 1;
             margin-bottom: 30px;
         }
+        section#about .col-md-6 {
+            order: 2;
+        }
 }
 
 @media(max-width:992px) {
