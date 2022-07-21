@@ -599,11 +599,14 @@ ul.footer_ul2_sec.social_footer_ul li.d-block {
         }
         section#about .col-md-6.pl-5.text-left {
             order: 1;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
         section#about .col-md-6 {
             order: 2;
         }
+    section#about p.desc {
+        text-align: left;
+    }
 }
 
 @media(max-width:992px) {
