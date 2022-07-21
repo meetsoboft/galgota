@@ -579,6 +579,27 @@ ul.footer_ul2_sec.social_footer_ul li.d-block {
     .our_purpose .card {
         margin-bottom: 40px;
     }
+    header.banner img {
+        margin-top: 50px;
+    }
+    .col-md-6.pl-5.text-left {
+        padding-left: 15px !important;
+    }
+    p.section_detail.pl-2.text-left.w-75.mx-auto {
+        width: 100% !important;
+    }
+    .contact-image img {
+        width: 30%;
+    }
+    .team-bg, section#purpose, section#about, section.services {
+        padding: 0px !important;
+    }
+        section#about span.d-inline-block.mb-2.opacity-2 {
+            margin-top: 40px;
+        }
+    section#about {
+        margin-top: 50px;
+    }
 }
 
 @media(max-width:992px) {
