@@ -597,9 +597,10 @@ ul.footer_ul2_sec.social_footer_ul li.d-block {
         section#about span.d-inline-block.mb-2.opacity-2 {
             margin-top: 40px;
         }
-    section#about {
-        margin-top: 50px;
-    }
+        section#about .col-md-6.pl-5.text-left {
+            order: 1;
+            margin-bottom: 30px;
+        }
 }
 
 @media(max-width:992px) {
