@@ -561,7 +561,24 @@ ul.footer_ul2_sec.social_footer_ul li.d-block {
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
 }
-
+.d-sm-none.d-block.mb-5.py-4 .btns {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+.d-sm-none.d-block.mb-5.py-4 {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 4px;
+}
+span.free {
+    font-weight: 600;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
 @media(max-width:767px) {
     .contact-form {
         width: 95%;
@@ -583,6 +600,9 @@ ul.footer_ul2_sec.social_footer_ul li.d-block {
     }
     header.banner img {
         margin-top: 50px;
+    }
+    .d-sm-none.d-block.mb-5.py-4 img {
+        margin: 0px;
     }
     .col-md-6.pl-5.text-left {
         padding-left: 15px !important;
