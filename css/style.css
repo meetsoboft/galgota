@@ -583,10 +583,16 @@ span.free {
     .contact-form {
         width: 95%;
     }
+    .navbar-nav li.nav-item a.nav-link {
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
     .services .card {
         width: 100%;
         flex: 0 0 100%;
-        margin-bottom: 10px;
+        padding: 0px;
+        margin-bottom: 20px;
     }
     p.section_detail.py-3.text-center.w-75.mx-auto {
         width: 100% !important;
@@ -612,6 +618,7 @@ span.free {
     }
     .contact-image img {
         width: 30%;
+        margin-top: 10px;
     }
     .team-bg, section#purpose, section#about, section.services {
         padding: 0px !important;
@@ -632,9 +639,10 @@ span.free {
     .services .card {
         flex: 0 0 100%;
     }
-    .services .card .card-body{
-        order:1;
-    }
+        .services .card .card-body {
+            order: 1;
+            padding: 0;
+        }
         .services .card img.card-img-top {
             order: 2;
         }
@@ -644,6 +652,47 @@ span.free {
     }
     section#team {
         padding: 0px 15px !important;
+    }
+    header.banner span.text-uppercase {
+        font-size: 2rem;
+    }
+    span.free {
+        font-size: 22px;
+        margin-bottom: 30px;
+        margin-top:10px;
+    }
+    .d-sm-none.d-block.mb-5.py-4 {
+        padding: 60px 20px !important;
+        text-align: center;
+        background: #06083c;
+        border-radius: 4px;
+        color: #fff;
+    }
+    h2.sec_title.font-weight-bold.pb-3 {
+        font-size: 1.5rem;
+    }
+    section#about p.desc {
+        font-size: 16px;
+    }
+    h5.card-title {
+        font-size: 1.1rem;
+    }
+    .title.text-uppercase span {
+        font-size: 1.5rem;
+    }
+    .contact-form h3 {
+        margin-bottom: 15%;
+        font-size: 1.4rem;
+        margin-top: 0%;
+    }
+    .form-group label {
+        font-size: 14px;
+    }
+    .d-sm-none.d-block.mb-5.py-4 .btns {
+        justify-content: space-around;
+    }
+    .services .card {
+        padding: 0px;
     }
 }
 span.msg {
@@ -684,4 +733,10 @@ nav.shadow.navbar.navbar-expand-lg.navbar-light.fixed img.img-fluid {
 nav.shadow.navbar.navbar-expand-lg.navbar-light.fixed a.nav-link {
     font-size: 16px;
     letter-spacing: 0.5px;
+}
+.collapse.show, .collapsing {
+    display: block;
+    background: #fff;
+    padding: 20px 0px;
+    margin-top: 10px;
 }
