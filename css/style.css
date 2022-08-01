@@ -256,6 +256,8 @@ section.contact {
 
 .contact-form .form-control {
     border-radius: 1rem;
+    min-height: 50px;
+    border-radius: 12px;
 }
 
 .contact-image {
@@ -292,8 +294,8 @@ section.contact {
 .contact-form .btnContact {
     width: 100%;
     border: none;
-    border-radius: 1rem;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 13px;
     background: #ff3900;
     font-weight: 600;
     color: #fff;
