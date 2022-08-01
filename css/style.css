@@ -433,7 +433,7 @@ footer p {
 .social_footer_ul li a {
     color: #ccc;
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 8px 10px;
     border-radius: 50%;
 }
 
