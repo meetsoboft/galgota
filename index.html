@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+         async defer>
+      </script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -335,7 +338,7 @@
                 <div class="contact-image">
                     <img src="images/rocket_contact.png" alt="Rocket Contact" />
                 </div>
-                <form id="frmContact">
+                <div>
                     <h3>Drop Us a Message</h3>
                     <div class="row">
                         <div class="col-md-6">
@@ -362,18 +365,18 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6" style="margin-top: 50px;">
-                            <div id="recaptcha" class="g-recaptcha" data-sitekey="6LcQrSMhAAAAAEO1qIy82VpW_nq4ZLL8KzXYoO4R" data-callback="vcc"></div>
-                            <span class="msg-error"></span>
+                            <div class="g-recaptcha" data-sitekey="6LcQrSMhAAAAAEO1qIy82VpW_nq4ZLL8KzXYoO4R" data-callback="verifyCaptcha"></div>
+							<div id="g-recaptcha-error"></div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group my-4">
-                                <input type="submit" name="btnContact" class="btnContact" value="Send Message" />
+                                <input type="submit" name="btnContact" class="btnContact" value="Send Message" onclick="submitUserForm()" />
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -422,7 +425,8 @@
             <p class="text-center text_color_w">Copyright @2022 | Designed With by <a href="#">GALGOTA TECH</a></p>
             <ul class="social_footer_ul">
                 <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#!"><i class="fab fa-twitter"></i></a></li>                
+                <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#!"><i class="fab fa-linkedin"></i></a></li>
                 <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
             </ul>
             <!--social_footer_ul ends here-->
@@ -430,16 +434,28 @@
     </footer>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+	
+   </head>
+</html>
+
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
     <script>
 
-        var vcc = function (g_recaptcha_response) {
-            var $captcha = $('#recaptcha');
-
-            $('.msg-error').text('');
-            $captcha.removeClass("error");
-        };
+        var recaptcha_response = '';
+		function submitUserForm() {
+			if(recaptcha_response.length == 0) {
+				document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+				return false;
+			}
+			btnSubmit();
+			return true;
+		}
+ 
+		function verifyCaptcha(token) {
+			recaptcha_response = token;
+			document.getElementById('g-recaptcha-error').innerHTML = '';
+		}
 
         $(".navbar ul li a[href^='#']").on('click', function (e) {
 
@@ -505,40 +521,5 @@
         $('.navbar-collapse a').click(function () {
             $(".navbar-collapse").collapse('hide');
         });
-
-        $(document).ready(function () {
-
-            $('#btnContact').click(function () {
-
-                $("#frmContact").submit(function () {
-
-                    //[0] - numer wiersza w tablicy
-                    if ($(this).serializeArray()[0].value != "") {
-                        btnSubmit();
-                    }
-
-                    else {
-                        // form submit return false
-                        return false;
-                    }
-                });
-                $captcha = $('#recaptcha');
-                response = grecaptcha.getResponse();
-
-                if (response.length === 0) {
-                    $('.msg-error').text("Zaznacz pole aby potwierdzić że jesteś człowiekiem");
-                    if (!$captcha.hasClass("error")) {
-                        $captcha.addClass("error");
-                    }
-                } else {
-                    $('.msg-error').text('');
-                    $captcha.removeClass("error");
-                    // form submit return true
-                    return true;
-                }
-            });
-        });
+        
     </script>
-</body>
-
-</html>
