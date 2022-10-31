@@ -119,9 +119,9 @@
                                         <img src="images/logo.png" class="img-fluid my-2" alt="Logo Image" style="width:120px;" />
                                         <h5 class="card-title font-weight-bold">Job & Work Finder App</h5>
                                         <p class="card-text">
-                                            Instantly Find your Dream Job and Get Job Offers as House Maid, Caretaker, Cook, Drivers, 
-											Electrician, Plumber, Gardener, Engineers, Nurses, Doctors, Programmers, Developers, 
-											Managers, Teachers, Cashier, Tele Caller, Accountant, & More
+                                            Instantly Find your Dream Job and Get Job Offers as House Maid, Caretaker, Cook, Drivers,
+                                            Electrician, Plumber, Gardener, Engineers, Nurses, Doctors, Programmers, Developers,
+                                            Managers, Teachers, Cashier, Tele Caller, Accountant, & More
 
                                         </p>
                                     </div>
@@ -411,16 +411,36 @@
                 <li><a href="https://twitter.com/GALGOTA_APP"><i class="fab fa-twitter"></i></a></li>
                 <!-- <li><a href="#!"><i class="fab fa-linkedin"></i></a></li> -->
                 <li><a href="https://www.instagram.com/GALGOTA_APP"><i class="fab fa-instagram"></i></a></li>
-				<li><a href="https://www.youtube.com/channel/UC6RUeFEDOs7HHXJensAj0Uw"><i class="fab fa-youtube"></i></a></li>
-				<li><a href="http://www.galgota.com"><i class="fas fa-share"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UC6RUeFEDOs7HHXJensAj0Uw"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#!" class="view-modal"><i class="fas fa-share"></i></a></li>
             </ul>
             <!--social_footer_ul ends here-->
         </div>
     </footer>
+    <div class="popup">
+        <header>
+            <span>Share Modal</span>
+            <div class="close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        </header>
+        <div class="content">
+            <p>Share this link via</p>
+            <ul class="icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+            </ul>
+            <p>Or copy link</p>
+            <div class="field">
+                <i class="fas fa-link" aria-hidden="true"></i>
+                <input type="text" readonly value="http://galgota.com/">
+                <button type="button" class="btn-custom btn">Copy</button>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
-    </head>
 
 </html>
 
@@ -507,4 +527,31 @@
     $('.navbar-collapse a').click(function() {
         $(".navbar-collapse").collapse('hide');
     });
+
+    const viewBtn = document.querySelector(".view-modal"),
+        popup = document.querySelector(".popup"),
+        close = popup.querySelector(".close"),
+        field = popup.querySelector(".field"),
+        input = field.querySelector("input"),
+        copy = field.querySelector("button");
+
+    viewBtn.onclick = () => {
+        popup.classList.toggle("show");
+    }
+    close.onclick = () => {
+        viewBtn.click();
+    }
+
+    copy.onclick = () => {
+        input.select(); //select input value
+        if (document.execCommand("copy")) { //if the selected text copy
+            field.classList.add("active");
+            copy.innerText = "Copied";
+            setTimeout(() => {
+                window.getSelection().removeAllRanges(); //remove selection from document
+                field.classList.remove("active");
+                copy.innerText = "Copy";
+            }, 3000);
+        }
+    }
 </script>
